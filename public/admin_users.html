@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Utilizatori</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .btn-mic { padding: 5px 10px; border: none; color: white; border-radius: 4px; cursor: pointer; margin-right: 5px; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar" class="navbar"></nav>
+
+    <div class="container main-content">
+        <h1><i class="fa fa-users-cog"></i> Administrare Utilizatori</h1>
+        <hr>
+
+        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+    <h3 style="margin-top:0; color:#27ae60;"><i class="fa fa-user-plus"></i> Cei mai noi 5 clienți</h3>
+    
+    <table class="users-table" style="font-size: 0.9rem;">
+        <thead>
+            <tr>
+                <th>Nume</th>
+                <th>Email</th>
+                <th>Dată Înscriere</th>
+            </tr>
+        </thead>
+        <tbody id="lista-utilizatori-noi">
+            <tr><td colspan="3">Se încarcă...</td></tr>
+        </tbody>
+    </table>
+</div>
+
+        <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 30px;">
+    <h3>🔍 Caută Rezervările unui Client</h3>
+    
+    <div style="display: flex; gap: 10px; margin-bottom: 15px; align-items: center;">
+        
+        <input type="text" id="input-email-cautare" placeholder="Introduce email-ul clientului..." 
+               style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+        
+        <button onclick="cautaRezervari()" class="btn-search" 
+                style="background-color: #3498db; color: white; width: auto !important; padding: 10px 20px; white-space: nowrap;">
+            Caută
+        </button>
+    </div>
+
+    <div id="zona-rezultate" class="hidden">
+        <table class="users-table">
+            <thead>
+                <tr>
+                    <th>Spectacol</th>
+                    <th>Data</th>
+                    <th>Status</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="tabel-rezultate-cautare">
+                </tbody>
+        </table>
+        <p id="mesaj-cautare" style="text-align:center; color:#7f8c8d; margin-top:10px;"></p>
+    </div>
+</div>
+
+        <div class="table-responsive">
+            <table class="users-table">
+                <thead>
+                    <tr>
+                        <th>Nume</th>
+                        <th>Email</th>
+                        <th>Rol</th>
+                        <th>Acțiuni</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-users">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+    <script src="js/admin_users.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Teatru Online</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav id="navbar" class="navbar"></nav>
+
+    <div class="container main-content">
+        <h1>Contactează-ne</h1>
+        <p style="text-align:center; margin-bottom: 40px;">Ai o întrebare sau o sugestie? Suntem aici pentru tine.</p>
+
+        <div class="contact-grid">
+            
+            <div class="contact-info">
+                <div class="info-box">
+                    <i class="fa fa-map-marker-alt"></i>
+                    <h3>Adresa Noastră</h3>
+                    <p>Bulevardul Culturii nr. 1, București</p>
+                </div>
+                <div class="info-box">
+                    <i class="fa fa-phone"></i>
+                    <h3>Telefon</h3>
+                    <p>0722 123 456</p>
+                    <p>021 987 654</p>
+                </div>
+                <div class="info-box">
+                    <i class="fa fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>contact@teatruonline.ro</p>
+                    <p>bilete@teatruonline.ro</p>
+                </div>
+            </div>
+
+            <div class="contact-form-card">
+                <h2>Scrie-ne un mesaj</h2>
+                <form id="form-contact">
+                    <label>Numele tău:</label>
+                    <input type="text" id="nume" required placeholder="Ion Popescu">
+
+                    <label>Email:</label>
+                    <input type="email" id="email" required placeholder="ion@email.com">
+
+                    <label>Mesaj:</label>
+                    <textarea id="mesaj" rows="5" required placeholder="Salut, aș vrea să întreb..."></textarea>
+
+                    <button type="submit" class="btn-contact">Trimite Mesajul</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/index.js"></script> <script>
+        document.getElementById('form-contact').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const data = {
+                nume: document.getElementById('nume').value,
+                email: document.getElementById('email').value,
+                mesaj: document.getElementById('mesaj').value
+            };
+
+            try {
+                const res = await fetch('http://localhost:5000/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const rasp = await res.json();
+                alert(rasp.mesaj);
+                document.getElementById('form-contact').reset();
+            } catch (err) {
+                alert("Eroare la trimitere.");
+            }
+        });
+    </script>
+</body>
+</html>

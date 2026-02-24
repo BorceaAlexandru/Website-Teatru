@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Spectacole - Teatru Online</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav id="navbar" class="navbar"></nav>
+
+    <div class="container main-content">
+        <h1>Programul Stagiunii</h1>
+        
+        <div class="search-bar">
+            <input type="text" id="cauta-titlu" placeholder="Caută după titlu (ex: Hamlet)...">
+            <input type="date" id="cauta-data">
+            <button onclick="aplicaFiltre()" class="btn-search">
+                <i class="fa fa-search"></i> Caută
+            </button>
+            <button onclick="resetFiltre()" class="btn-reset">
+                <i class="fa fa-sync"></i> Reset
+            </button>
+        </div>
+
+        <hr>
+
+        <div id="grid-spectacole" class="grid-container">
+            <p>Se încarcă...</p>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script> <script src="js/spectacole.js"></script> </body>
+</html>

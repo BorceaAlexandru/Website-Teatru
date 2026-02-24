@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Contul Meu - Teatru Online</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav id="navbar" class="navbar"></nav>
+
+    <div class="container main-content">
+        
+        <div class="profile-header">
+            <div class="avatar-circle">
+                <i class="fa fa-user"></i>
+            </div>
+            <div>
+                <h1 id="nume-user">Se încarcă...</h1>
+                <p id="email-user" style="color: #bdc3c7;">...</p>
+                <span id="rol-user" class="badge">CLIENT</span>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2 style="margin-top: 30px;"><i class="fa fa-history"></i> Istoric Rezervări</h2>
+        
+        <div class="table-responsive">
+            <table class="users-table">
+                <thead>
+                    <tr>
+                        <th>Spectacol</th>
+                        <th>Sala</th>
+                        <th>Data Spectacol</th>
+                        <th>Bilete</th>
+                        <th>Data Comenzii</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-istoric">
+                    </tbody>
+            </table>
+            <p id="fara-rezervari" class="hidden" style="text-align: center; margin-top: 20px;">Nu ai nicio rezervare momentan.</p>
+        </div>
+
+        <hr style="margin: 40px 0;">
+
+        <h2><i class="fa fa-file-invoice-dollar"></i> Facturile Mele</h2>
+        
+        <div class="table-responsive">
+            <table class="users-table">
+                <thead>
+                    <tr>
+                        <th># Factura</th>
+                        <th>Data Emiterii</th>
+                        <th>Client</th>
+                        <th>Total (RON)</th>
+                        <th>Acțiuni</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-facturi">
+                    </tbody>
+            </table>
+            <p id="fara-facturi" class="hidden" style="text-align: center; margin-top: 20px; color:#7f8c8d;">
+                Nu există facturi emise.
+            </p>
+            </div>
+
+    </div>
+
+    <script src="js/index.js"></script>
+    <script src="js/cont.js"></script>
+</body>
+</html>

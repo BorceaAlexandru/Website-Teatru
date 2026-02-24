@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestiune Spectacole</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo"><i class="fa fa-arrow-left"></i> Înapoi</a>
+        <span style="color: white; font-weight: bold;">GESTIUNE REPERTORIU</span>
+    </nav>
+
+    <div class="container main-content gestion-grid">
+        
+        <div class="form-section">
+            <h2 id="form-title">Adaugă Spectacol Nou</h2>
+            <form id="form-spectacol" onsubmit="salveazaSpectacol(event)">
+                <input type="hidden" id="spec-id">
+
+                <label>Titlu:</label>
+                <input type="text" id="titlu" required placeholder="ex: Hamlet">
+
+                <label>Regia:</label>
+                <input type="text" id="regia" required placeholder="ex: Cristi Juncu">
+
+                <div class="row-2">
+                    <div>
+                        <label>Gen:</label>
+                        <select id="gen">
+                            <option value="Drama">Dramă</option>
+                            <option value="Comedie">Comedie</option>
+                            <option value="Tragedie">Tragedie</option>
+                            <option value="Musical">Musical</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Durata (min):</label>
+                        <input type="number" id="durata" required placeholder="120">
+                    </div>
+                </div>
+
+                <label>Link Imagine Afiș (URL):</label>
+                <input type="text" id="imagine" placeholder="http://...">
+
+                <label>Descriere:</label>
+                <textarea id="descriere" rows="4" style="width:100%; padding:10px; border-radius:6px; border:1px solid #ddd;"></textarea>
+
+                <button type="submit" class="btn-save">Salvează Spectacolul</button>
+                <button type="button" onclick="resetForm()" class="btn-cancel hidden" id="btn-cancel">Anulează Editarea</button>
+            </form>
+        </div>
+
+        <div class="list-section">
+            <h2>Spectacole în Baza de Date</h2>
+            <div class="table-responsive">
+                <table class="users-table">
+    <thead>
+        <tr>
+            <th>Titlu</th>
+            <th>Gen</th>
+            <th>Regia</th>
+            <th>Durata (min)</th> <th>Acțiuni</th>
+        </tr>
+    </thead>
+    <tbody id="lista-spectacole">
+        </tbody>
+</table>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/gestiune.js"></script>
+</body>
+</html>
