@@ -1,8 +1,6 @@
 # 🎭 Platformă de Teatru Online (Ticketing & Management)
 
 <div align="center">
-  <img src="logo_AB.jpg" alt="Logo Proiect" width="150" height="150" style="border-radius:50%">
-  <br>
   <em>O soluție completă pentru gestionarea unui teatru digital: de la rezervarea biletelor și generarea facturilor, până la administrarea spectacolelor și a utilizatorilor.</em>
 </div>
 
