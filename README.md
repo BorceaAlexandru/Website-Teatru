@@ -16,7 +16,7 @@ Punctul forte al aplicației este logica de backend complexă, care gestionează
 
 ### 👤 Pentru Clienți (Frontend)
 * **Catalog Interactiv:** Vizualizare spectacole cu filtre după titlu și dată.
-* **Sistem de Rezervare:** * Verificare în timp real a locurilor disponibile.
+* **Sistem de Rezervare:** Verificare în timp real a locurilor disponibile.
     * Algoritm inteligent de alocare a locurilor (selectează automat cele mai bune locuri disponibile).
 * **Coș de Cumpărături:** Posibilitatea de a rezerva bilete pentru multiple spectacole simultan.
 * **Cont Utilizator:**
@@ -25,13 +25,13 @@ Punctul forte al aplicației este logica de backend complexă, care gestionează
     * Posibilitatea de a anula rezervări (cu eliberarea automată a locurilor).
 
 ### 🛡️ Pentru Admin & Operatori (Backend & Dashboard)
-* **Role-Based Access Control (RBAC):** Sistem de securitate pe 3 niveluri (Client, Operator, Admin).
+* **Role-Based Access Control:** Sistem de securitate pe 3 niveluri (Client, Operator, Admin).
 * **Management Repertoriu (CRUD):** Adăugare/Editare/Ștergere spectacole.
 * **Calendar & Programări:**
     * **Conflict Detection:** Sistemul previne suprapunerea spectacolelor în aceeași sală, calculând automat durata și intervalele orare.
 * **Administrare Utilizatori:**
     * Promovare/Retrogradare roluri.
-    * **Force Delete:** Ștergerea utilizatorilor și a tuturor datelor asociate (GDPR compliant logic).
+    * **Force Delete:** Ștergerea utilizatorilor și a tuturor datelor asociate.
 * **Rapoarte & Statistici:**
     * Top spectacole vândute.
     * Top clienți VIP (în funcție de suma cheltuită).
@@ -39,10 +39,10 @@ Punctul forte al aplicației este logica de backend complexă, care gestionează
 
 ## 🛠️ Tehnologii Folosite
 
-* **Frontend:** HTML5, CSS3 (Custom Responsive Design), JavaScript (Vanilla ES6+).
+* **Frontend:** HTML, CSS, JavaScript.
 * **Backend:** Node.js, Express.js.
 * **Bază de Date:** Microsoft SQL Server (MSSQL).
-* **Concepte:** REST API, SQL Transactions, ACID compliance, JWT (simulated via SessionStorage).
+* **Concepte:** REST API, SQL Transactions, ACID compliance.
 
 ## ⚙️ Instalare și Configurare
 
@@ -130,8 +130,8 @@ CREATE TABLE FACTURA (
     Adresa_Email NVARCHAR(150)
 );
 
--- 3. SEED DATA (Date Inițiale Obligatorii)
--- Inserăm o Sală și generăm 50 de locuri automat
+-- 3. Date Inițiale Obligatorii
+-- Inserare 50 de locuri
 INSERT INTO SALA (Nume, Numar_Locuri) VALUES ('Sala Mare', 50);
 
 DECLARE @i INT = 1;
@@ -141,6 +141,6 @@ BEGIN
     SET @i = @i + 1;
 END
 
--- Inserăm un Admin default
+-- Inserare Admin default
 INSERT INTO UTILIZATOR (Nume, Prenume, Email, Parola, Rol) 
 VALUES ('Admin', 'Sistem', 'admin@teatru.ro', 'admin123', 'admin');
